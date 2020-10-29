@@ -9,40 +9,28 @@ Funcionalidade: Cadastro de Usuários
     Cenário: Cadastro
         Dado que acesso a página de cadastro
         Quando submeto o meu cadastro com:
-              | email          | mairacelestino@hotmail.com |     
-              | senha          | 123mudar                   |
-              | senha_confirma | 123mudar                   |
+            | email          | mairacelestino@hotmail.com |
+            | senha          | 123mudar                   |
+            | senha_confirma | 123mudar                   |
         Então devo ser redirecionado para a área logada
 
-    
-    Cenário: Email não informado
+    Esquema do Cenário: Tentativa de Cadastro
+
         Dado que acesso a página de cadastro
         Quando submeto o meu cadastro com:
-             | email          |                |      
-             | senha          | 123mudar       |
-             | senha_confirma | 123mudar       |
-        Então devo ver a mensagem: "Oops! Informe seu email."
+            | email          | <email>          |
+            | senha          | <senha>          |
+            | senha_confirma | <senha_confirma> |
+        Então devo ver a mensagem: "<mensagem_saida>"
 
-   Cenário: Senha não informada
-       Dado que acesso a página de cadastro
-       Quando submeto o meu cadastro com:
-            | email          | mairacelestino@hotmail.com|     
-            | senha          |                           |
-            | senha_confirma |                           |
-       Então devo ver a mensagem: "Oops! Informe sua senha."
+        Exemplos:
+            | email                      | senha    | senha_confirma | mensagem_saida                       |
+            |                            | 123mudar | 123mudar       | Oops! Informe seu email.             |
+            | mairacelestino@hotmail.com |          |                | Oops! Informe sua senha.             |
+            | mairacelestino@hotmail.com | 123mudar | 1234mudar      | Oops! Senhas não são iguais.         |
+            |                            |          |                | Oops! Informe seu email e sua senha. |
+    @temp
+    Cenário: Validação do campo email
 
-    Cenário: Senha divergente
-       Dado que acesso a página de cadastro
-       Quando submeto o meu cadastro com:
-            | email          | mairacelestino@hotmail.com |     
-            | senha          | 123mudarr                  |
-            | senha_confirma | 123mudar                   |
-       Então devo ver a mensagem: "Oops! Senhas não são iguais."
-
-    Cenário: Nenhum campo preenchido
-       Dado que acesso a página de cadastro
-       Quando submeto o meu cadastro com:
-           | email          |                  |     
-           | senha          |                  |
-           | senha_confirma |                  |
-       Então devo ver a mensagem: "Oops! Informe seu email e sua senha."
+        Quando acesso a página de cadastro
+        Então deve exibir o seguinte css: "input[type=email]" 
