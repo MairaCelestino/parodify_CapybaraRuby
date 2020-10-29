@@ -33,4 +33,4 @@ Funcionalidade: Cadastro de Usuários
     Cenário: Validação do campo email
 
         Quando acesso a página de cadastro
-        Então deve exibir o seguinte css: "input[type=email]" 
+        Então deve exibir o seguinte css: "input[type=email]"
