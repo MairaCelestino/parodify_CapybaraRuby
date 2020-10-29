@@ -10,8 +10,6 @@
   Dado('que eu gosto muito de {string}') do |cat|
     find("a[href='/search/new']").click 
     find("img[src$='#{cat.downcase}.png']").click 
-
-    sleep 10
   end
   
   Quando('toco a seguinte canção:') do |table|
@@ -27,5 +25,4 @@
     
       song_play = find('.playing')
       expect(song_play).to have_text @parody[:parodia]
-      sleep 10
   end

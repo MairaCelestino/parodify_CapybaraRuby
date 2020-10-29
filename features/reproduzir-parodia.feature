@@ -6,7 +6,7 @@
         Para que eu poassa ouvir as paródias das minhas bandas favoritas
 
         Contexto: Login
-            * Login com "mairacelestino@hotmail.com" e "123mudar"
+            * Login com "mairacelestino@bol.com" e "123mudar"
 
         Cenário: Ouvir parodia
 

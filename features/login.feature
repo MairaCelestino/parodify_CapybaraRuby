@@ -9,7 +9,7 @@
         Cenário: Login do usuário
 
             Dado que acesso a página principal 
-            Quando submeto minhas credenciais com: "mairacelestino@hotmail.com" e "123mudar"
+            Quando submeto minhas credenciais com: "mairacelestino@bol.com" e "123mudar"
             Então devo ser redirecionado para a área logada
 
         Cenário: Tentativa de login
